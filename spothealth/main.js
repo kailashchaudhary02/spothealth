@@ -1,1 +1,2 @@
-console.log("main js file");
+const name = "Blue color"
+console.log(name);
