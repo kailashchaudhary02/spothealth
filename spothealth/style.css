@@ -10,3 +10,6 @@ button {
     border-radius: 4px;
     text-transform: uppercase;
 }
+button.blue{
+    background-color: blue;
+}
