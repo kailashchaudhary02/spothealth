@@ -4,6 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -41,7 +42,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="toggle_btn">
-                                    <a href="#" class="show_more_btn"><i class="fas"></i> <span>Show
+                                    <a href="#" class="show_more_btn"><i class="fas "></i> <span>Show
                                             Information</span></a>
                                 </div>
                                 <div class="content_wrapper">
@@ -82,6 +83,22 @@
         .add_more_content {
             display: none;
         }
+
+        a.show_more_btn i.fas {
+            position: relative;
+            padding-right: 23px;
+        }
+
+        a.show_more_btn i.fas::after {
+            position: absolute;
+            left: 0;
+            content: "\f078";
+            font-family: FontAwesome;
+        }
+
+        a.show_more_btn.active i.fas::after {
+            content: "\f077";
+        }
     </style>
 
 
@@ -92,6 +109,7 @@
                 var dropDown = $(this).closest('.card_wrapper').find('.add_more_content');
                 //$(this).addClass("active_class");
                 $(this).closest('.main_accrodian').find('.add_more_content').not(dropDown).slideUp();
+
                 if ($(this).hasClass('active')) {
                     $(this).removeClass('active');
                 } else {
