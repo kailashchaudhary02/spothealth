@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="main_accrodian">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card_wrapper mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="toggle_btn">
+                                    <a href="#" class="show_more_btn"><i class="fas"></i> <span>Show
+                                            Information</span></a>
+                                </div>
+                                <div class="content_wrapper">
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur odio
+                                        quibusdam excepturi cupiditate? Provident minima officia, exercitationem velit
+                                        cupiditate fugiat eum numquam praesentium amet! Voluptatem nulla dignissimos
+                                        explicabo? Nesciunt, culpa!</p>
+                                </div>
+                                <div class="add_more_content p-2 bg-success text-white">
+                                    <h3>Heading</h3>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="card_wrapper mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="toggle_btn">
+                                    <a href="#" class="show_more_btn"><i class="fas"></i> <span>Show
+                                            Information</span></a>
+                                </div>
+                                <div class="content_wrapper">
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur odio
+                                        quibusdam excepturi cupiditate? Provident minima officia, exercitationem velit
+                                        cupiditate fugiat eum numquam praesentium amet! Voluptatem nulla dignissimos
+                                        explicabo? Nesciunt, culpa!</p>
+                                </div>
+                                <div class="add_more_content p-2 bg-success text-white">
+                                    <h3>Heading</h3>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .toggle_btn a {
+            font-weight: bold;
+            color: red;
+            text-decoration: none;
+        }
+
+        .add_more_content {
+            display: none;
+        }
+    </style>
+
+
+    <script> //main_accrodian
+        $(document).ready(function () {
+
+            $(".show_more_btn").click(function (event) {
+                var dropDown = $(this).closest('.card_wrapper').find('.add_more_content');
+                //$(this).addClass("active_class");
+                $(this).closest('.main_accrodian').find('.add_more_content').not(dropDown).slideUp();
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                } else {
+                    $(this).closest('.main_accrodian').find('.main_accrodian.active').removeClass('active');
+                    $(this).addClass('active');
+                }
+                dropDown.stop(false, true).slideToggle();
+                event.preventDefault();
+            });
+
+
+
+
+            //https://codepen.io/Ravyre/pen/bYQOMx
+        });
+    </script>
+</body>
+
+</html>
